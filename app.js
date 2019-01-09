@@ -14,6 +14,11 @@ app.use(express.static('public'));
 let io = socket(server);
 
 // fire the connection event when a connection is stablished
-io.on('connection', () => {
+io.on('connection', (socket) => {
     console.log('connection made');
+
+    // when the 'chat' message received
+    socket.on('chat', (data) => {
+        io.sockets.emit('chat', data);
+    })
 });
