@@ -1,4 +1,5 @@
 const express = require('express');
+const socket = require('socket.io');
 
 const app = express();
 
@@ -8,3 +9,11 @@ const server = app.listen(3000, () => {
 });
 
 app.use(express.static('public'));
+
+// setup the socket on the backend
+let io = socket(server);
+
+// fire the connection event when a connection is stablished
+io.on('connection', () => {
+    console.log('connection made');
+});
