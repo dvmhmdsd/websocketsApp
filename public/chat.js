@@ -1,5 +1,5 @@
 // make the connection
-let socket = io.connect('https://websocketsapp.herokuapp.com');
+let socket = io.connect('/');
 
 
 let message = document.getElementById('message');
