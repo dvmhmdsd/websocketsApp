@@ -11,11 +11,14 @@
     <div id="chat-app">
         <div id="chat-window">
             <div id="output"></div>
+            <div id="feedback"></div>
         </div>
-        <input type="text" id="handle" placeholder="Handle">
-        <input type="text" id="message" placeholder="Message">
+        <form id="form">
+            <input type="text" id="handle" placeholder="Handle">
+            <input type="text" id="message" placeholder="Message">
 
-        <button id="send">Send</button>
+            <button id="send" type="submit">Send</button>
+        </form>
     </div>
 
     <script src="/chat.js"></script>

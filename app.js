@@ -20,5 +20,10 @@ io.on('connection', (socket) => {
     // when the 'chat' message received
     socket.on('chat', (data) => {
         io.sockets.emit('chat', data);
-    })
+    });
+
+    //when the user is typing
+    socket.on('typing', (data) => {
+        socket.broadcast.emit('typing', data);
+    });
 });
